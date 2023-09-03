@@ -1,1 +1,3 @@
-export class Category {}
+export class Category {
+  nome: string;
+}
