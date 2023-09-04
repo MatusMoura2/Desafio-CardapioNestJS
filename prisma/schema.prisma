@@ -33,11 +33,11 @@ model Categorie {
 }
 
 model Menu {
-  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
   name        String
-  servingTime DateTime
-  Products    Product[]
+  nocturnal   Boolean
+  categorieId String  @db.ObjectId
 
-  Categorie   Categorie? @relation(fields: [categorieId], references: [id])
-  categorieId String?    @db.ObjectId
+  Products  Product[]
+  Categorie Categorie @relation(fields: [categorieId], references: [id])
 }
